@@ -26,7 +26,7 @@ services_btns.addEventListener("click", function(evt){
     if (old_description && new_description) {
         old_description.classList.toggle("services__current--decription");
         new_description.classList.toggle("services__current--decription");
-        var services_btn_old = services_btns.querySelector("services__button--current");
+        var services_btn_old = services_btns.querySelector(".services__button--current");
         services_btn_old.classList.toggle("services__button--current");
         evt.target.classList.toggle("services__button--current");
     }
