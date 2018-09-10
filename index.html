@@ -6,7 +6,7 @@
   <title>HTML Academy: Девайс</title>
   <link href="css/min-normalize.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic" rel="stylesheet">
-  <link href="css/min-style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -90,10 +90,7 @@
   <main>
 
     <div class="slider">
-      <div class="slider__buttons">
-
-      </div>
-      <section class="slider__slide slider__slide1 current-slide">
+      <section class="slider__slide slider__slide1 current-slide" id="first_slide">
         <div class="slider__column-left">
           <img class="slider__image" src="img/slide-1.png" width="526" height="497" alt="Монопод для селфи">
         </div>
@@ -103,11 +100,6 @@
             длиной и весом всего 5 килограмм.
           </p>
           <a class="slider__link" href="#">Подробнее</a>
-          <div class="slider__buttons">
-            <button class="slider__button slider__button--active" type="button"><span class="visually-hidden">Первый слайд</span></button>
-            <button class="slider__button" type="button"><span class="visually-hidden">Второй слайд</span></button>
-            <button class="slider__button" type="button"><span class="visually-hidden">Третий слайд</span></button>
-          </div>
           <ul class="slider__table table-slider">
             <li class="table-slider__info">
               <div>8,5 м</div>
@@ -125,7 +117,7 @@
           <p class="slider__number">01</p>
         </div>
       </section>
-      <section class="slider__slide slider__slide2">
+      <section class="slider__slide slider__slide2" id="second_slide">
         <div class="slider__column-left">
           <img class="slider__image" src="img/slide-2.png" width="526" height="497" alt="фитнес-браслет">
         </div>
@@ -135,11 +127,6 @@
             диету.
           </p>
           <a class="slider__link" href="#">Подробнее</a>
-          <div class="slider__buttons">
-            <button class="slider__button slider__button--active" type="button"><span class="visually-hidden">Первый слайд</span></button>
-            <button class="slider__button" type="button"><span class="visually-hidden">Второй слайд</span></button>
-            <button class="slider__button" type="button"><span class="visually-hidden">Третий слайд</span></button>
-          </div>
           <ul class="slider__table table-slider">
             <li class="table-slider__info">
               <div>48 часов</div>
@@ -149,7 +136,7 @@
           <p class="slider__number">02</p>
         </div>
       </section>
-      <section class="slider__slide slider__slide3">
+      <section class="slider__slide slider__slide3" id="third_slide">
         <div class="slider__column-left">
           <img class="slider__image" src="img/slide-3.png" width="526" height="497" alt="Квадрокоптер">
         </div>
@@ -158,11 +145,6 @@
           <p class="slider__info">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным&nbsp;лазером, замаскированным
             под стандартную камеру.</p>
           <a class="slider__link" href="#">Подробнее</a>
-          <div class="slider__buttons">
-            <button class="slider__button slider__button--active" type="button"><span class="visually-hidden">Первый слайд</span></button>
-            <button class="slider__button" type="button"><span class="visually-hidden">Второй слайд</span></button>
-            <button class="slider__button" type="button"><span class="visually-hidden">Третий слайд</span></button>
-          </div>
           <ul class="slider__table table-slider">
             <li class="table-slider__info">
               <div>800 м</div>
@@ -176,6 +158,11 @@
           <p class="slider__number">03</p>
         </div>
       </section>
+      <div class="slider__buttons">
+        <button class="slider__button slider__button--active" type="button" data-for="first_slide"><span class="visually-hidden">Первый слайд</span></button>
+        <button class="slider__button" type="button" data-for="second_slide"><span class="visually-hidden">Второй слайд</span></button>
+        <button class="slider__button" type="button" data-for="third_slide"><span class="visually-hidden">Третий слайд</span></button>
+      </div>
     </div>
 
     <section class="popular">
@@ -205,27 +192,27 @@
       <section class="services">
         <div class="services__column-left">
           <div class="services__buttons">
-            <button class="services__button services__button--current" type="button">Доставка</button>
-            <button class="services__button" type="button">Гарантия</button>
-            <button class="services__button" type="button">Кредит</button>
+            <button class="services__button services__button--current" type="button" data-for="delivery">Доставка</button>
+            <button class="services__button" type="button" data-for="guarantee">Гарантия</button>
+            <button class="services__button" type="button" data-for="credit">Кредит</button>
           </div>
         </div>
         <div class="services__column-right">
-          <div class="services__description services__current--decription">
+          <div class="services__description services__current--decription" id="delivery">
             <div class="delivery">
               <h2 class="services__title services__title--1">Доставка</h2>
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,
                 поднимая его на ваш этаж</p>
             </div>
           </div>
-          <div class="services__description">
+          <div class="services__description"  id="guarantee">
             <div class="guarantee">
               <h2 class="services__title services__title--2">Гарантия</h2>
               <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар,
                 не дом, конечно же.</p>
             </div>
           </div>
-          <div class="services__description">
+          <div class="services__description" id="credit">
             <div class="credit">
               <h2 class="services__title services__title--3">Кредит</h2>
               <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита.
@@ -397,7 +384,8 @@
     </div>
   </footer>
 
-  <script src="js/min-scripts.js"></script>
+  <script src="js/slider__scripts.js"></script>
+  <script src="js/min-popup__scripts.js"></script>
 </body>
 
 </html>

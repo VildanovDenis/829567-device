@@ -36,9 +36,22 @@ img {
 a {
   text-decoration: none;
 }
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  
+  white-space: nowrap;
+
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .header {
   position: relative;
@@ -435,8 +448,11 @@ a {
 
   background: transparent;
 }
+
 .slider__buttons {
-  margin-right: 22px;
+  position: absolute; 
+  bottom: 136px;
+  right: 82px;
 }
 .slider__button {
   position: relative;
@@ -484,6 +500,20 @@ a {
   display: flex;
   opacity: 1;
   z-index: 1;
+  
+  animation-name: slider_top;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+}
+@keyframes slider_top {
+  0% {
+    opacity: 0;
+    transform: translateX(-33%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX() (0%);
+  }
 }
 .slider__column-left {
   position: relative;
@@ -522,6 +552,7 @@ a {
   color: white;
 }
 .slider__call {
+  z-index: 1;
   padding: 0;
   margin: 0;
   margin-bottom: 19px;
@@ -557,7 +588,7 @@ a {
   min-height: 40px;
   padding-left: 2px;
   margin-bottom: 49px;
-  margin-right: auto;
+  margin-right: 144px;
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
@@ -795,9 +826,9 @@ a {
   color: black;
 
   background-color: transparent;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 .services__button::before {
   position: absolute;
@@ -810,9 +841,9 @@ a {
   height: 8px;
 
   background-color: #f0c52e;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 .services__button:hover::before {
   position: absolute;
