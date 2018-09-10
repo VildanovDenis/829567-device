@@ -965,6 +965,16 @@ input[type="radio"].visually-hidden {
   display: block;
   z-index: 1;
 }
+@keyframes description {
+  0% {
+    opacity: 0;
+    /* transform: translateX(200px); */
+  }
+  100% {
+    opacity: 1;
+    /* transform: translateX(0px); */
+  }
+}
 .brands {
   width: 1160px;
   margin: 0 auto;
